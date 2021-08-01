@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from convertor.encode_convertor import Encoder
 import os
 from pathlib import Path
 
@@ -36,15 +37,19 @@ def generate_trash_files():
 
 
 def encode_decoded_source():
-    # TODO: need to implement this functionality [3]
-    raise NotImplementedError('Not implemented [3]')
+    encoder = Encoder()
+    return encoder.convert_files(input_dir=DECODED_DIR, 
+                                 input_mask='decoded*', 
+                                 output_dir=ENCODED_DIR,
+                                 input_prefix='decoded',
+                                 output_prefix='encoded')
 
 
 def main():
     assert_source_files()
     decode_source()
     generate_trash_files()
-    # encode_decoded_source()
+    encode_decoded_source()
 
 
 if __name__ == '__main__':
