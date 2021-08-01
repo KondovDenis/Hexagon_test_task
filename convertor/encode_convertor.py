@@ -17,7 +17,7 @@ class Encoder(AbstractFileConvertor):
             for original, variable in tuple_list
         }
 
-    def convert_text(self, input_text: str) -> str:
+    def _convert_text(self, input_text: str) -> str:
         for original, replace in sorted(self._latter_mapper.items(),
                                         key=lambda x: len(x),
                                         reverse=True):

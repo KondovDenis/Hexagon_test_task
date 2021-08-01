@@ -37,7 +37,7 @@ def generate_trash_files():
 
 
 def encode_decoded_source():
-    encoder = Encoder()
+    encoder = Encoder(KEY_FILE)
     return encoder.convert_files(input_dir=DECODED_DIR, 
                                  input_mask='decoded*', 
                                  output_dir=ENCODED_DIR,
